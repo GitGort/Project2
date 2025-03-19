@@ -6,6 +6,15 @@ using namespace std;
 
 class Item {
   /*TODO: write your code*/
+
+  private: 
+    string name;
+    string desc;
+
+  public:
+    item(string n, string d) { name = n, desc = d;}
+
+
 };
 
 
