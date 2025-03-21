@@ -72,4 +72,27 @@ class Place {
 
 class Player {
   /*TODO: write your code*/
+
+  private:
+
+    string name;
+    int health;
+    int attackPower;
+
+  public:
+
+    // vector
+    // Inventory
+    vector<Item>inventory;
+
+    // varaible
+    Place* currentPlace;
+
+    // Functions
+    Player(string n, int h, int a) {name = n, health = h, attackPower = a;} //constructor
+    void pickUpItem(item i);
+    void attackEnemy(Enemy& e);
+    void displayInventory(void);
+    void moveToPlace(Place* p);
+
 };
