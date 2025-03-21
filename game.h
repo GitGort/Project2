@@ -12,9 +12,9 @@ class Item {
     string desc;
 
   public:
-    item(string n, string d) { name = n, desc = d;} //constructor
-    string getName(); //getter
-    string getDesc(); //getter
+    Item(string n, string d) { name = n, desc = d;} //constructor
+    string getName() {return name;} //getter
+    string getDesc() {return desc;} //getter
 
 };
 
@@ -31,10 +31,10 @@ class Enemy {
   public:
 
     Enemy(string n, int h, int a) {name = n, health = h, attackPower = a;} //constructor
-    string getName(); //getter
-    int getHealth(); //getter
-    int getAttackPower(); //getter
-    void setHealth(int h); //setter
+    string getName() {return name;} //getter
+    int getHealth() {return health;} //getter
+    int getAttackPower() {return attackPower;} //getter
+    void setHealth(int h) {health = h;} //setter
 
 };
 
@@ -50,20 +50,20 @@ class Place {
 
     //vectors
     // itemList
-    vector<Item>itemList;
+    vector<Item> itemList;
     // enemyList
-    vector<Enemy>enemyList;
+    vector<Enemy> enemyList;
     // placeList
-    vector<Place*>placeList;
+    vector<Place*> placeList;
 
 
     //functions
     Place(string d) {desc = d;} //constructor
-    string getDesc(); //getter
+    string getDesc() {return desc;} //getter
 
-    // void addItem(Item i);
-    // void addEnemy(Enemy e);
-    // void addPlace(Place* p);
+    void addItem(Item i) {itemList.push_back(i);}
+    void addEnemy(Enemy e) {enemyList.push_back(e);}
+    void addPlace(Place* p) {placeList.push_back(p);}
 
     // 
 
@@ -83,16 +83,16 @@ class Player {
 
     // vector
     // Inventory
-    vector<Item>inventory;
+    vector<Item> inventory;
 
     // varaible
     Place* currentPlace;
 
     // Functions
     Player(string n, int h, int a) {name = n, health = h, attackPower = a;} //constructor
-    void pickUpItem(item i);
-    void attackEnemy(Enemy& e);
-    void displayInventory(void);
-    void moveToPlace(Place* p);
+    void pickUpItem(item i) {inventory.push_back(i);}
+    void attackEnemy(Enemy& e) {e.setHealth(e.getHealth() - attackPower);}
+    void displayInventory() {for (const auto& item : inventory) {} ;}
+    void moveToPlace(Place* p) { currentPlace = p;}
 
 };
