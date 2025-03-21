@@ -12,7 +12,7 @@ class Item {
     string desc;
 
   public:
-    item(string n, string d) { name = n, desc = d}; //constructor
+    item(string n, string d) { name = n, desc = d;} //constructor
     string getName(); //getter
     string getDesc(); //getter
 
@@ -30,7 +30,7 @@ class Enemy {
 
   public:
 
-    Enemy(string n, int h, int a) {name = n, health = h, attackPower = a}; //constructor
+    Enemy(string n, int h, int a) {name = n, health = h, attackPower = a;} //constructor
     string getName(); //getter
     int getHealth(); //getter
     int getAttackPower(); //getter
@@ -49,14 +49,23 @@ class Place {
   public:
 
     //vectors
-   // item(itemList)
-
+    // itemList
+    vector<Item>itemList;
+    // enemyList
+    vector<Enemy>enemyList;
+    // placeList
+    vector<Place*>placeList;
 
 
     //functions
-    Place(string d) {desc = d}; //constructor
+    Place(string d) {desc = d;} //constructor
     string getDesc(); //getter
-    
+
+    // void addItem(Item i);
+    // void addEnemy(Enemy e);
+    // void addPlace(Place* p);
+
+    // 
 
 };
 
