@@ -65,8 +65,9 @@ class Place {
     void addEnemy(Enemy e) {enemyList.push_back(e);}
     void addPlace(Place* p) {placeList.push_back(p);}
 
-    // 
+    void printItems() {;}
 
+    void printEnemies() {;}
 };
 
 
