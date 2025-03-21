@@ -90,7 +90,7 @@ class Player {
 
     // Functions
     Player(string n, int h, int a) {name = n, health = h, attackPower = a;} //constructor
-    void pickUpItem(item i) {inventory.push_back(i);}
+    void pickUpItem(Item i) {inventory.push_back(i);}
     void attackEnemy(Enemy& e) {e.setHealth(e.getHealth() - attackPower);}
     void displayInventory() {for (const auto& item : inventory) {} ;}
     void moveToPlace(Place* p) { currentPlace = p;}
