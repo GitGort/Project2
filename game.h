@@ -72,7 +72,7 @@ class Place {
             cout << "-Items:" << endl;
             for (int i = 0; i < itemList.size(); i++)
             {
-                cout << "- " << itemList[i].getName() << ": " << itemList[i].getDesc();
+                cout << "- " << itemList[i].getName() << ": " << itemList[i].getDesc() << endl;
             }
         }
     }
@@ -85,7 +85,7 @@ class Place {
             for (int i = 0; i < enemyList.size(); i++)
             {
                 cout << "- " << enemyList[i].getName() << ": (Health: " << enemyList[i].getHealth() 
-                      << ", Attack Power: " << enemyList[i].getAttackPower() << ")";
+                      << ", Attack Power: " << enemyList[i].getAttackPower() << ")" << endl;
             }
         }
     }
