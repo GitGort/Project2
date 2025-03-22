@@ -65,9 +65,30 @@ class Place {
     void addEnemy(Enemy e) {enemyList.push_back(e);}
     void addPlace(Place* p) {placeList.push_back(p);}
 
-    void printItems() {;}
-
-    void printEnemies() {;}
+    void printItems(void) {
+        if (itemList.size() == 0) {cout << "-No items." << endl;}
+        else
+        {
+            cout << "-Items:" << endl;
+            for (int i = 0; i < itemList.size(); i++)
+            {
+                cout << "- " << itemList[i].getName() << ": " << itemList[i].getDesc();
+            }
+        }
+    }
+// refit to give enemy info instead of item info
+    void printEnemies(void) {
+        if (enemyList.size() == 0) {cout << "-No enemies." << endl;}
+        else
+        {
+            cout << "-Enemies:" << endl;
+            for (int i = 0; i < enemyList.size(); i++)
+            {
+                cout << "- " << enemyList[i].getName() << ": (Health: " << enemyList[i].getHealth() 
+                      << ", Attack Power: " << enemyList[i].getAttackPower() << ")";
+            }
+        }
+    }
 };
 
 
